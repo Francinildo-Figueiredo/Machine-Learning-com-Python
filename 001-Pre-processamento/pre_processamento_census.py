@@ -32,7 +32,7 @@ previsores[:, 13] = labelencoder_previsores.fit_transform(previsores[:, 13])'''
 #onehotencoder = OneHotEncoder(categorical_features = [1,3,5,6,7,8,9,13])
 '''
     A função OneHotEncoder é muito eficiente para codificar bases de dados categóricas
-    com várias colunas e nomes diferentes.
+    com diversos atributos e nomes diferentes.
     
     criando variáveis do tipo 'dummy', onde cada categória será transformada em números
     discretos 0 e 1 

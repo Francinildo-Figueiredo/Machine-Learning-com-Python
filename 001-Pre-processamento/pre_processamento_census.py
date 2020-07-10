@@ -38,7 +38,6 @@ labelencoder_classe = LabelEncoder()
 classe = labelencoder_classe.fit_transform(classe)
 
 # Escalonando as variáveis
-
 from sklearn.preprocessing import StandardScaler
 scale = StandardScaler()
 previsores = scale.fit_transform(previsores)

@@ -15,6 +15,7 @@ classe = base.iloc[:, 14].values
 
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.compose import ColumnTransformer
+
 # definindo um objeto do tipo LabelEncoder, que é um codificador de etiquetas
 '''labelencoder_previsores = LabelEncoder()
 labels = labelencoder_previsores.fit_transform(previsores[:, 1])
@@ -28,16 +29,8 @@ previsores[:, 9] = labelencoder_previsores.fit_transform(previsores[:, 9])
 previsores[:, 13] = labelencoder_previsores.fit_transform(previsores[:, 13])'''
 
 # Transformação de variáveis categóricas II
-
-#onehotencoder = OneHotEncoder(categorical_features = [1,3,5,6,7,8,9,13])
-'''
-    A função OneHotEncoder é muito eficiente para codificar bases de dados categóricas
-    com diversos atributos e nomes diferentes.
-    
-    criando variáveis do tipo 'dummy', onde cada categória será transformada em números
-    discretos 0 e 1 
-'''
-onehotencoder = ColumnTransformer(transformers=[("OneHot", OneHotEncoder(), [1,3,5,6,7,8,9,13])],remainder='passthrough')
+# Criando um objeto do tipo OneHotEncoder
+onehotencoder = ColumnTransformer(transformers=[("OneHot", OneHotEncoder(), [1,3,5,6,7,8,9,13])], remainder='passthrough')
 previsores = onehotencoder.fit_transform(previsores).toarray()
 
 # A função Labelencoder é mais eficiente em arrays com apenas uma coluna e respostas duplas
